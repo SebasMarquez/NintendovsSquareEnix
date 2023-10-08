@@ -16,6 +16,8 @@ public class NintendovsSquareEnix {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ProjectManager PM = new ProjectManager(5);
+        PM.start();
     }
     
 }

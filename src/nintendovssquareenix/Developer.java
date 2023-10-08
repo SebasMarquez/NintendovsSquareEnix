@@ -15,10 +15,14 @@ public class Developer extends Thread{
     private double produccionDiaria;
     private int accProduccion;
     private int tipoDesarrollador;
+    private String parteJuego;
+    private final int id;
     private boolean esIntegrador;
     
-    public Developer (int tipoDesarrollador){
+    public Developer (int id, int tipoDesarrollador, String parteJuego){
         this.pagoTotal = 0;
+        this.parteJuego = parteJuego;
+        this.id = id;
         this.dolarPorHora = 0;
         this.accProduccion = 0;
         this.produccionDiaria = 0;
@@ -71,7 +75,19 @@ public class Developer extends Thread{
             produccionDiaria = 0;
             
         }
+       
+        setaccProduccion(0);
+    }
     
+    public int getDolarPorHora(){
+        return dolarPorHora;
+    }
+    public void setaccProduccion(double accProduccion){
+        accProduccion = accProduccion;
+    }
+    
+    public void PagoDiarioDeveloper(){
+        pagoTotal += (getDolarPorHora()*24); 
     }
     
 }
